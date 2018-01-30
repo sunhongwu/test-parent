@@ -1,8 +1,9 @@
-package com.shw.test.account.email.service;
+package com.shw.test.account.presist.service;
 
 import com.icegreen.greenmail.util.GreenMail;
 import com.icegreen.greenmail.util.GreenMailUtil;
 import com.icegreen.greenmail.util.ServerSetup;
+import com.shw.test.account.email.service.AccountEmailService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.annotations.AfterMethod;

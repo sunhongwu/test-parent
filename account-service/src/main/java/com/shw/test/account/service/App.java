@@ -1,4 +1,4 @@
-package com.shw.test.account.email;
+package com.shw.test.account.service;
 
 /**
  * Hello world!

@@ -1,4 +1,4 @@
-package com.shw.test.account.email;
+package com.shw.test.account.presist;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
