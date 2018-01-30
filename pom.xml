@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.shw.test</groupId>
+  <artifactId>test-parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <modules>
+    <module>account-email</module>
+    <module>account-presist</module>
+    <module>account-captcha</module>
+    <module>account-service</module>
+    <module>account-web</module>
+  </modules>
+  <packaging>pom</packaging>
+
+  <name>我的测试项目</name>
+  <url>http://maven.apache.org</url>
+
+  <!--依赖优化
+  mvn dependency:list   已解析依赖
+  mvn dependency:tree   已解析依赖树
+  mvn dependency:analyze 分析当前项目依赖
+  1）分析出当前使用了的，但是没有显示声明的依赖
+  2）显示声明了，但是没有在项目中直接使用的依赖
+  这个命令不能分析出除当前项目代码外对显示声明的jar包的依赖，比如：
+  当前代码中没有使用spring-beans，但是ioc容器启动的时候，spring内部使用了这个
+  spring-beans依赖，那么使用这个命令的时候，就会认为这个spring-beans是显示声明但是没有使用的依赖-->
+  <!--插件信息查看
+  mvn help:describe -Dplugin=source -Ddetail
+  -Dgoal=目标名称，查看单个目标的信息
+  查看插件的目标、目标的默认绑定阶段
+  执行顺序按照阶段的顺序和目标声明的顺序
+  -Da=b -D是java自带的，设置java系统属性，maven利用这一特性，
+  在准备插件之前会检查系统属性，配置插件
+  pom文件中配置的插件参数，是插件的全局参数，所有目标共用-->
+  <!--查看系统环境变量 mvn help:system-->
+  <!--maven属性-->
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!--依赖归类-->
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.13.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
