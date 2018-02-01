@@ -25,13 +25,21 @@ public class AccountPersistServiceTest {
         accountPersistService = (AccountPersistService)ctx.getBean("accountPersistService");
 
         Account account = new Account();
-        account.setId("1");
+        account.setId("2");
         account.setName("test");
         account.setEmail("email");
         account.setPassword("password");
         account.setActivated(true);
 
+        Account account1 = new Account();
+        account1.setId("1");
+        account1.setName("test");
+        account1.setEmail("email");
+        account1.setPassword("password");
+        account1.setActivated(true);
+
         accountPersistService.createAccount(account);
+        accountPersistService.createAccount(account1);
     }
     @Test
     public void readAccount() throws Exception{

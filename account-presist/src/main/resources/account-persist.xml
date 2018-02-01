@@ -7,7 +7,7 @@
         <property name="location" value="classpath:service.properties"/>
     </bean>
 
-    <bean id="accountPersionService" class="com.shw.test.account.presist.service.impl.AccountPersistServiceImpl">
+    <bean id="accountPersistService" class="com.shw.test.account.presist.service.impl.AccountPersistServiceImpl">
         <property name="file" value="${persist.file}"/>
     </bean>
 

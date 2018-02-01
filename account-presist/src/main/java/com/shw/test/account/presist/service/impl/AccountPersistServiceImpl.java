@@ -3,13 +3,11 @@ package com.shw.test.account.presist.service.impl;
 import com.shw.test.account.presist.exception.AccountPersistException;
 import com.shw.test.account.presist.model.Account;
 import com.shw.test.account.presist.service.AccountPersistService;
-import org.dom4j.Document;
-import org.dom4j.DocumentException;
-import org.dom4j.DocumentFactory;
-import org.dom4j.Element;
+import org.dom4j.*;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
+import sun.misc.IOUtils;
 
 import java.io.*;
 import java.util.List;
@@ -79,7 +77,19 @@ public class AccountPersistServiceImpl implements AccountPersistService {
     
 
     public Account createAccount(Account account) throws AccountPersistException {
-        return null;
+
+        Document document = readDocument();
+        Element root = document.getRootElement().element(ELEMENT_ACCOUNTS);
+        Element act = root.addElement("account");
+        act.addAttribute("number", "1003");
+        // 分别为stuEle添加名为name、age、sex的子元素，并为子元素设置文本内容
+        act.addElement(ELEMENT_ACCOUNT_ID).setText(account.getId());
+        act.addElement(ELEMENT_ACCOUNT_NAME).setText(account.getName());
+        act.addElement(ELEMENT_ACCOUNT_EMAIL).setText(account.getEmail());
+        act.addElement(ELEMENT_ACCOUNT_PASSWORD).setText(account.getPassword());
+        act.addElement(ELEMENT_ACCOUNT_ACVITAVED).setText(String.valueOf(account.isActivated()));
+        writeDocument(document);
+        return account;
     }
 
 
@@ -87,7 +97,7 @@ public class AccountPersistServiceImpl implements AccountPersistService {
         Document document = readDocument();
         Element accountsEle = document.getRootElement().element(ELEMENT_ACCOUNTS);
         for (Element accountEle : (List<Element>)accountsEle.elements()){
-            if (accountEle.elementText(ELEMENT_ACCOUNT_ID).equals("id")){
+            if (accountEle.elementText(ELEMENT_ACCOUNT_ID).equals("1")){
                 return buildAccount(accountEle);
             }
         }
