@@ -11,6 +11,7 @@
     <packaging>jar</packaging>
 
     <name>账户验证码生成（captcha）</name>
+    <description>账户验证码生成</description>
     <url>http://maven.apache.org</url>
 
     <properties>

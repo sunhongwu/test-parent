@@ -12,6 +12,7 @@
     <packaging>jar</packaging>
 
     <name>账户邮件服务模块（email）</name>
+    <description>账户邮件服务</description>
     <url>http://maven.apache.org</url>
 
     <dependencies>

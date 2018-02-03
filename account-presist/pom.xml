@@ -12,6 +12,7 @@
     <packaging>jar</packaging>
 
     <name>账户CRUD服务模块(presist)</name>
+    <description>账户信息增删改查</description>
     <url>http://maven.apache.org</url>
 
     <dependencies>

@@ -10,7 +10,8 @@
     <artifactId>account-service</artifactId>
     <packaging>jar</packaging>
 
-    <name>account-service</name>
+    <name>账户服务统一接口(service)</name>
+    <description>账户service统一接口</description>
     <url>http://maven.apache.org</url>
 
     <properties>
