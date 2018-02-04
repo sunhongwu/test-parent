@@ -1,14 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--指定了该xml文档的版本和编码方式-->
+<!--pom的跟元素，声明了一些pom相关的命名空间及xsd元素，虽然这些属性不是必须的，
+    但使用这些属性能够让第三方工具帮助我们快速编辑POM文件。-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <!--指定pom模型的版本，对于maven2和maven3来说，只能是4.0.0-->
   <modelVersion>4.0.0</modelVersion>
-
+  <!--接下来三个元素是定义一个项目的基本坐标-->
+  <!--定义该项目属于哪个组，这个组往往和项目所在的组织或公司存在关联-->
   <groupId>com.shw.test</groupId>
+  <!--定义当前maven项目在组织中的唯一ID-->
   <artifactId>test-parent</artifactId>
+  <!--定义当前项目的版本-->
   <version>1.0.0-SNAPSHOT</version>
+  <!--项目的打包类型 默认为jar-->
   <packaging>pom</packaging>
-
+  <!--项目友好的名称，用于用户间交流-->
   <name>我的测试项目</name>
+  <!--项目描述信息，用于项目文档-->
   <description>测试项目站点</description>
+  <!--项目地址信息，用于项目文档-->
   <url>http://maven.apache.org</url>
 
   <!--项目组织信息-->
@@ -38,6 +49,18 @@
       <timezone>8</timezone>
     </developer>
   </developers>
+
+  <!--贡献者-->
+  <contributors>
+
+  </contributors>
+
+  <!--邮件列表-->
+  <mailingLists>
+    <mailingList>
+
+    </mailingList>
+  </mailingLists>
 
   <!--问题追踪系统信息-->
   <issueManagement>
@@ -181,6 +204,11 @@
         <version>${org.springframework.version}</version>
       </dependency>
       <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+        <version>${org.springframework.version}</version>
+      </dependency>
+      <dependency>
         <groupId>dom4j</groupId>
         <artifactId>dom4j</artifactId>
         <version>${dom4j.version}</version>
@@ -265,6 +293,25 @@
           <configuration>
             <locales>zh_CN</locales>
           </configuration>
+        </plugin>
+        <!--测试插件-->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.5</version>
+        </plugin>
+        <!--测试代码生成jar包-->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>2.2</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>test-jar</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
       </plugins>
     </pluginManagement>
