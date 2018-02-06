@@ -1,4 +1,4 @@
-package com.shw.test.account.presist.service;
+package com.shw.test.account.email.service;
 
 import com.icegreen.greenmail.util.GreenMail;
 import com.icegreen.greenmail.util.GreenMailUtil;

@@ -1,7 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--指定了该xml文档的版本和编码方式-->
-<!--pom的跟元素，声明了一些pom相关的命名空间及xsd元素，虽然这些属性不是必须的，
-    但使用这些属性能够让第三方工具帮助我们快速编辑POM文件。-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <!--指定pom模型的版本，对于maven2和maven3来说，只能是4.0.0-->
@@ -171,7 +167,6 @@
     <dom4j.version>1.6.1</dom4j.version>
   </properties>
 
-  <!--项目依赖-->
   <dependencies>
     <dependency>
       <groupId>org.testng</groupId>
@@ -235,6 +230,25 @@
   </distributionManagement>
   <!--项目构建配置-->
   <build>
+    <!--标注项目生成的主构件的名称-->
+    <!--<finalName>web-war</finalName>-->
+
+    <!--设置主要资源文件过滤（maven属性替换）-->
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+
+    <!--设置测试资源文件过滤（maven属性替换）-->
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
+
     <!--构建功能扩展-->
     <extensions>
       <extension>
@@ -250,8 +264,8 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
           <configuration>
-            <source>1.8</source>
-            <target>1.8</target>
+            <source>1.7</source>
+            <target>1.7</target>
           </configuration>
         </plugin>
         <!--设置处理资源文件使用的编码,因为maven的内置阶段绑定，子模块不用显示声明就可以生效-->
@@ -299,6 +313,11 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.5</version>
+          <!--解决编码问题-->
+          <configuration>
+            <forkMode>once</forkMode>
+            <argLine>-Dfile.encoding=UTF-8</argLine>
+          </configuration>
         </plugin>
         <!--测试代码生成jar包-->
         <plugin>
@@ -315,22 +334,6 @@
         </plugin>
       </plugins>
     </pluginManagement>
-
-    <!--设置主要资源文件过滤（maven属性替换）-->
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-        <filtering>true</filtering>
-      </resource>
-    </resources>
-
-    <!--设置测试资源文件过滤（maven属性替换）-->
-    <testResources>
-      <testResource>
-        <directory>src/test/resources</directory>
-        <filtering>true</filtering>
-      </testResource>
-    </testResources>
 
   </build>
 </project>

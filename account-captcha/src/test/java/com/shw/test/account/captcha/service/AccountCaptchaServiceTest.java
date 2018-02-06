@@ -56,11 +56,11 @@ public class AccountCaptchaServiceTest {
 
         String captchsKey = service.generateCaptchaKey();
         service.generateCaptchaImage(captchsKey);
-        assertTrue(service.validateCaptcha(captchsKey,"123456"));
+        assertTrue(service.validateCaptcha(captchsKey,"12345"));
 
         captchsKey = service.generateCaptchaKey();
         service.generateCaptchaImage(captchsKey);
-        assertTrue(service.validateCaptcha(captchsKey,"123456"));
+        assertTrue(service.validateCaptcha(captchsKey,"abcde"));
 
     }
 
@@ -72,7 +72,7 @@ public class AccountCaptchaServiceTest {
 
         String captchsKey = service.generateCaptchaKey();
         service.generateCaptchaImage(captchsKey);
-        assertTrue(service.validateCaptcha(captchsKey,"67890"));
+        assertTrue(service.validateCaptcha(captchsKey,"12345"));
 
     }
 

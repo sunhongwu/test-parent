@@ -1,7 +1,39 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         id="WebApp_ID" version="2.5">
+  <!--该web项目的显示名称-->
+  <display-name>web-war</display-name>
+  <!--用于启动spring-web的ioc容器-->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <!--指定配置文件的位置-->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+      classpath:/account-email.xml
+      classpath:/account-captcha.xml
+      classpath:/account-persist.xml
+      classpath:/account-service.xml
+    </param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>CaptchaImageServlet</servlet-name>
+    <servlet-class>com.shw.test.account.web.servlet.CaptchaImageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SignUpServlet</servlet-name>
+    <servlet-class>com.shw.test.account.web.servlet.SignUpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CaptchaImageServlet</servlet-name>
+    <url-pattern>/captcha_image</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SignUpServlet</servlet-name>
+    <url-pattern>/signup</url-pattern>
+  </servlet-mapping>
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
 </web-app>

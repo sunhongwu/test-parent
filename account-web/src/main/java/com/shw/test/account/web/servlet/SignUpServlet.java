@@ -3,7 +3,6 @@ package com.shw.test.account.web.servlet;
 import com.shw.test.account.service.exception.AccountServiceException;
 import com.shw.test.account.service.model.SignUpRequest;
 import com.shw.test.account.service.service.AccountService;
-import com.sun.xml.internal.ws.wsdl.writer.document.StartWithExtensionsType;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
