@@ -351,7 +351,10 @@
         <configuration>
           <username>sunhongwu</username>
           <password>shwsunhongwu5</password>
+          <!--标签-->
           <tagBase>https://github.com/sunhongwu/test-parent.git</tagBase>
+          <!--分支-->
+          <branchBase>https://github.com/sunhongwu/test-parent.git</branchBase>
         </configuration>
       </plugin>
     </plugins>
