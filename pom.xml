@@ -233,7 +233,7 @@
     <repository>
       <id>distribution</id>
       <name>release</name>
-      <url>http://10.143.117.11:8081/nexus/content/groups/public</url>
+      <url>http://10.143.117.11:8081/nexus/content/groups/shw-group</url>
     </repository>
   </distributionManagement>
   <!--项目构建配置-->
