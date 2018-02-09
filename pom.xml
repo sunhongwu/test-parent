@@ -7,7 +7,7 @@
   <!--定义当前maven项目在组织中的唯一ID-->
   <artifactId>test-parent</artifactId>
   <!--定义当前项目的版本-->
-  <version>1.0.2-SNAPSHOT</version>
+  <version>1.0.2</version>
   <!--项目的打包类型 默认为jar-->
   <packaging>pom</packaging>
   <!--项目友好的名称，用于用户间交流-->
@@ -30,7 +30,7 @@
     <developerConnection>scm:git:https://github.com/sunhongwu/test-parent.git</developerConnection>
     <!--可以在浏览器访问的scm地址-->
     <url>https://github.com/sunhongwu/test-parent.git</url>
-    <tag>HEAD</tag>
+    <tag>test-parent-1.0.2</tag>
   </scm>
 
   <!--持续集成服务器信息-->
