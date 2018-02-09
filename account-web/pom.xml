@@ -51,6 +51,60 @@
                     </webAppConfig>
                 </configuration>
             </plugin>
+            <!--使用cargo进行web服务自动化部署，本地、远程-->
+            <plugin>
+                <groupId>org.codehaus.cargo</groupId>
+                <artifactId>cargo-maven2-plugin</artifactId>
+                <version>1.6.6</version>
+                <!--<configuration>
+                    <container>
+                        &lt;!&ndash;web容器的类型和版本，这个值插件有定义不是自定义的名字&ndash;&gt;
+                        <containerId>tomcat7x</containerId>
+                        &lt;!&ndash;本地容器路径&ndash;&gt;
+                        <home>D:\WorkSpace\apache-tomcat-7.0.84-maven</home>
+                    </container>
+                    <configuration>
+                        &lt;!&ndash;设置本地部署方式&ndash;&gt;
+                        <type>standalone</type>
+                        &lt;!&ndash;设置本地部署目录&ndash;&gt;
+                        <home>${project.build.directory}/tomcat7x</home>
+                        &lt;!&ndash;修改端口，默认是8080&ndash;&gt;
+                        <properties>
+                            <cargo.servlet.port>8082</cargo.servlet.port>
+                        </properties>
+                    </configuration>
+                </configuration>-->
+                <configuration>
+                    <container>
+                        <!--web容器的类型和版本，这个值插件有定义不是自定义的名字-->
+                        <containerId>tomcat7x</containerId>
+                        <!--本地容器路径-->
+                        <home>D:\WorkSpace\apache-tomcat-7.0.84-maven</home>
+                    </container>
+                    <configuration>
+                        <!--设置本地部署方式-->
+                        <type>existing</type>
+                        <!--设置本地部署目录-->
+                        <home>D:\WorkSpace\apache-tomcat-7.0.84-maven</home>
+                    </configuration>
+                </configuration>
+                <!--<configuration>
+                    <container>
+                        &lt;!&ndash;web容器的类型和版本，这个值插件有定义不是自定义的名字&ndash;&gt;
+                        <containerId>tomcat7x</containerId>
+                        <type>remote</type>
+                    </container>
+                    <configuration>
+                        &lt;!&ndash;设置远程部署方式&ndash;&gt;
+                        <type>runtime</type>
+                        <properties>
+                            <cargo.remote.username>admin</cargo.remote.username>
+                            <cargo.remote.password>admin123</cargo.remote.password>
+                            <cargo.tomcat.manager.url>http://localhost:8080/manager</cargo.tomcat.manager.url>
+                        </properties>
+                    </configuration>
+                </configuration>-->
+            </plugin>
         </plugins>
     </build>
 </project>

@@ -58,7 +58,7 @@ public class AccountCaptchaServiceImpl implements AccountCaptchaService  ,Initia
             throw new AccountCaptchaException("CatchKey'"+captchaKey+"'not found!");
         }
 
-        if(text == captchaValue){
+        if(text.equals(captchaValue)){
             captchaMap.remove(captchaKey);
             return true;
         }else{

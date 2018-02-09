@@ -20,15 +20,15 @@ org.springframework.web.context.support.WebApplicationContextUtils" %>
 %>
 <div class="text-field">
     <h2>注册新账户</h2>
-    <form name="signup" action="signup" most="post">
+    <form name="signup" action="/test/signup" most="post">
         <label>账户ID：</label><input type="text" name="id"/><br/>
         <label>Email：</label><input type="text" name="email"/><br/>
         <label>显示名称：</label><input type="text" name="name"/><br/>
         <label>密码：</label><input type="text" name="password"/><br/>
         <label>确认密码：</label><input type="text" name="confirm_password"/><br/>
         <label>验证码：</label><input type="text" name="captcha_value"/><br/>
-        <input type="hidden" name="captchaKey" value="<% =captchaKey%>"/>
-        <img src="<% =request.getContextPath() %>/captcha_image?key=<% =captchaKey%>"/>
+        <input type="hidden" name="captchaKey" value="<%= captchaKey %>"/>
+        <img src="<%= request.getContextPath() %>/captcha_image?key=<%= captchaKey %>"/>
         <button>确认并提交</button>
 
     </form>

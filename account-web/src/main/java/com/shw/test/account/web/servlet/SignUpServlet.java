@@ -26,6 +26,11 @@ public class SignUpServlet extends HttpServlet {
 
 
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doPost(req, resp);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         boolean flag = true;
@@ -34,9 +39,9 @@ public class SignUpServlet extends HttpServlet {
         String email = req.getParameter("email");
         String name = req.getParameter("name");
         String password = req.getParameter("password");
-        String confirmPassword = req.getParameter("confirmPassword");
+        String confirmPassword = req.getParameter("confirm_password");
         String captchaKey = req.getParameter("captchaKey");
-        String captchaValue = req.getParameter("captchaValue");
+        String captchaValue = req.getParameter("captcha_value");
 
         switch ("id"){
             case "id":
