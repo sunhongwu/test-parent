@@ -230,6 +230,11 @@
       <id>site</id>
       <url>dav:http://localhost:8080/webdav/</url>
     </site>
+    <repository>
+      <id>distribution</id>
+      <name>release</name>
+      <url>http://10.143.117.11:8081/nexus/content/groups/public</url>
+    </repository>
   </distributionManagement>
   <!--项目构建配置-->
   <build>
